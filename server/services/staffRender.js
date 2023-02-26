@@ -5,7 +5,7 @@ const axios = require('axios');
 //Customer
 exports.staffCustomer = (req,res) =>{
 
-    axios.get("http://localhost:3000/admin/api/getCustomer")
+    axios.get("/admin/api/getCustomer")
     .then(function(response){
       console.log(response.data)
       res.render('staff/customer',{customer:response.data})
@@ -18,7 +18,7 @@ exports.staffCustomer = (req,res) =>{
 }
 
 exports.staffCustomerHis = (req,res) =>{
-    axios.get("http://localhost:3000/admin/api/orderingDetails")
+    axios.get("/admin/api/orderingDetails")
     .then(function(response){
       console.log(response.data)
     res.render('staff/customerHistory',{customerHis:response.data})
@@ -30,7 +30,7 @@ exports.staffCustomerHis = (req,res) =>{
 
 exports.staffCustomerView = (req,res)=>{
 
-    axios.get("http://localhost:3000/admin/api/orderingDetails","http://localhost:3000/admin/api/inv")
+    axios.get("/admin/api/orderingDetails","/admin/api/inv")
     .then(function(response){
         res.render('staff/customerView',{orderingDetails:response.data})
         console.log(response)
@@ -50,7 +50,7 @@ exports.staffOrderingDetails = (req,res)=>{
 }
 
 exports.customerRecord = (req,res)=>{
-    axios.get("http://localhost:3000/admin/api/getCustomer")
+    axios.get("/admin/api/getCustomer")
     .then(function(response){
         console.log(response.data)
         res.render("staff/customerRecord",{custRecord:response.data})
@@ -64,7 +64,7 @@ exports.customerRecord = (req,res)=>{
 
 //Inventory
 exports.staffInv = (req,res)=>{
-    axios.get("http://localhost:3000/admin/api/itemName")
+    axios.get("/admin/api/itemName")
     .then(function(response){
         console.log(response.data)
         res.render("staff/inventory",{itemName:response.data})
@@ -75,7 +75,7 @@ exports.staffInv = (req,res)=>{
 }
 
 exports.staffInvHis = (req,res)=>{
-    axios.get("http://localhost:3000/admin/api/invHis")
+    axios.get("/admin/api/invHis")
     .then(function(response){
         console.log(response.data)
         res.render("staff/inventoryHistory",{invHis:response.data})
@@ -87,7 +87,7 @@ exports.staffInvHis = (req,res)=>{
 }
 
 exports.staffViewSocks = (req,res)=>{
-    axios.get("http://localhost:3000/admin/api/inv")
+    axios.get("/admin/api/inv")
     .then(function(response){
         console.log(response.data)
         res.render('staff/viewStocks',{stocks:response.data})
@@ -107,7 +107,7 @@ exports.staffViewSocks = (req,res)=>{
 
 exports.staffItemHistoryView = (req,res)=>{
 
-    axios.get("http://localhost:3000/admin/api/inv")
+    axios.get("/admin/api/inv")
     .then(function(response){
         console.log(response.data)
         res.render('staff/itemHistoryView',{stocks:response.data})
@@ -119,7 +119,7 @@ exports.staffItemHistoryView = (req,res)=>{
 
 exports.staffItemOut = (req,res) =>{
 
-    axios.get("http://localhost:3000/admin/api/orderingDetails")
+    axios.get("/admin/api/orderingDetails")
     .then(function(response){
       console.log(response.data)
       res.render('staff/itemOut',{customerHis:response.data})
@@ -131,7 +131,7 @@ exports.staffItemOut = (req,res) =>{
 }
 
 exports.staffSackTransfer = (req,res)=>{
-    axios.get("http://localhost:3000/admin/api/itemName")
+    axios.get("/admin/api/itemName")
     .then(function(response){
         console.log(response.data)
         res.render('staff/sackTransfer',{itemName:response.data})
@@ -149,7 +149,7 @@ exports.staffSackTransfer = (req,res)=>{
 // TRANSACTION
 
 exports.staffTrans = (req,res)=>{
-    axios.get("http://localhost:3000/admin/api/trans")
+    axios.get("/admin/api/trans")
     .then(function(response){
         res.render('staff/transaction',{trans:response.data})
     })
@@ -179,7 +179,7 @@ exports.staffSalesTransacted = (req,res)=>{
 
 
 exports.staffRoute = (req,res)=>{
-    axios.get("http://localhost:3000/admin/api/truckRoute")
+    axios.get("/admin/api/truckRoute")
     .then(function(response){
         res.render('staff/routing',{truck:response.data})
     })
@@ -195,7 +195,7 @@ exports.staffLocation = (req,res)=>{
     res.render('staff/locations')
 }
 exports.staffDeliveryDetails = (req,res)=>{
-    axios.get("http://localhost:3000/admin/api/orderingDetailsGroup")
+    axios.get("/admin/api/orderingDetailsGroup")
     .then(function(response){
         res.render('staff/deliveryDetails',{delivery:response.data})
     })
@@ -226,7 +226,7 @@ exports.staffTopSpenderRanking = (req,res)=>{
 
 exports.staffBackLoadHis = (req,res)=>{
 
-    axios.get("http://localhost:3000/admin/api/backLoad")
+    axios.get("/admin/api/backLoad")
     .then(function(response){
         res.render('staff/backLoadHis',{backLoad:response.data})
     })
@@ -239,7 +239,7 @@ exports.staffBackLoadHis = (req,res)=>{
 
 exports.staffSackTransHis = (req,res)=>{
 
-    axios.get("http://localhost:3000/admin/api/sacksTransferFind")
+    axios.get("/admin/api/sacksTransferFind")
     .then(function(response){
         res.render('staff/sackTransHis',{sacksTransfer:response.data})
     }).catch(err=>{
@@ -255,7 +255,7 @@ exports.staffControl = (req,res)=>{
 }
 
 exports.paidCustRecord = (req,res)=>{
-    axios.get("http://localhost:3000/admin/api/paidCustRecord")
+    axios.get("/admin/api/paidCustRecord")
     .then(function(response){
         res.render('staff/paidCustRecord',{paid:response.data})
     }).catch(err=>{
@@ -266,7 +266,7 @@ exports.paidCustRecord = (req,res)=>{
 }
 
 exports.balanceCustRecord = (req,res)=>{
-    axios.get("http://localhost:3000/admin/api/balanceCustRecord")
+    axios.get("/admin/api/balanceCustRecord")
     .then(function(response){
         res.render("staff/balanceCustRecord",{balance:response.data})
     }).catch(err=>{
