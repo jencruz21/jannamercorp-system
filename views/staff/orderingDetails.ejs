@@ -1,0 +1,204 @@
+<%- include('include/header') %>
+<div class="page-body">
+    <!-- Default color card start -->
+    <div class="card">
+        <div class="card-header">
+            <h5>Ordering Details</h5>
+        </div>
+        <fieldset>
+        <form action="/admin/api/orderingDetails" method="post" name="myform">
+        <div class="card-block">
+            <div class="row text-uppercase text-center">
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="date" name="date" class="form-control form-txt-primary" style="background-color: rgb(47, 47, 187);" placeholder="Date">
+                </div>
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="text" name="itemName" class="form-control form-txt-primary" style="background-color: rgb(58, 58, 189);" placeholder="Item Name">
+                </div>
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="text" name="selectPricing" class="form-control form-txt-primary"  style="background-color: rgb(63, 63, 184);" placeholder="Select Pricing">
+                </div>
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="number" name="sacks" class="form-control form-txt-primary"  style="background-color: yellow;" placeholder="By Sacks" >
+                </div>
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="number" name="kilosType" class="form-control form-txt-primary" onkeyup="calculate(this.value)" style="background-color: yellow;" placeholder="Kilos type/sacks">
+                </div>
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="number" name="kilos" class="form-control form-txt-primary"  style="background-color: yellow;" placeholder="Kilos">
+                </div>
+                <div class="col-md-6 waves-effect waves-light p-b-10">
+                    <input type="number" name="inputKilos" class="form-control form-txt-primary"style="background-color: blue;" onkeyup="calculate(this.value)"  placeholder="Retype Kilos">
+                </div>
+                <div class="col-md-6 waves-effect waves-light p-b-10">
+                    <input type="number" name="amount" disabled class="form-control form-txt-primary"style="background-color: blue;"  placeholder="Amount">
+                </div>
+        
+            </div>
+            <!-- end of eow -->
+        </div>
+    </div>
+    
+<div class="page-body">
+    <!-- Default color card start -->
+    <div class="card">
+        <div class="card-header">
+            <h5>Select Customer</h5>
+        </div>
+        <div class="card-block">
+            <div class="row text-uppercase text-center">
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="text" name="selectCustomer" class="form-control form-txt-primary" placeholder="Select Customer">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="previousRemitance"  class="form-control form-txt-primary" placeholder="Previous Remittance">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="previousBalance"  class="form-control form-txt-primary" placeholder="Previous Balance">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="text" name="isCleared"  class="form-control form-txt-primary" placeholder= "Is Cleared">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="creditLimit"  class="form-control form-txt-primary" placeholder="Credit Limit">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="text" name="transactionType" class="form-control form-txt-primary" placeholder="Transaction Type">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="text" name="addOns" class="form-control form-txt-primary" placeholder="Add-Ons">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="less" class="form-control form-txt-primary" placeholder="Less">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="cashRemited" class="form-control form-txt-primary" placeholder="Cash Remited">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="checkValue" class="form-control form-txt-primary" placeholder="Check Value">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="checkNumber" class="form-control form-txt-primary" placeholder="Check Number">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="date" name="checkDate" class="form-control form-txt-primary" placeholder="Check Date">
+                </div>
+                <div class="col-md-6 waves-effect waves-light p-b-10">
+                    <input type="text" name="noteTransaction" class="form-control form-txt-primary" placeholder="Note About this Transaction">
+                </div>
+
+             
+
+              
+             
+            </div>
+            <div class="col-md-3 waves-effect waves-light p-b-10">
+                <button type="submit" class="btn btn-primary waves-effect waves-light">Transact</button>
+            </div>
+            <!-- end of eow -->
+      
+        </div>
+    </div>
+    
+</div> 
+
+<div class="page-body">
+    <!-- Default color card start -->
+    <div class="card">
+        <div class="card-header">
+            <h5>Item Subtotal</h5>
+        </div>
+        
+        <div class="card-block">
+            <div class="row text-uppercase text-center">
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="text" name="itemSubtotal" class="form-control form-txt-primary" placeholder="Item Subtotal">
+                </div>
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="text" name="grandTotal" class="form-control form-txt-primary" placeholder="Grand Total">
+                </div>
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="text" name="cavans" class="form-control form-txt-primary" placeholder="Cavans">
+                </div>
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="text" name="change" class="form-control form-txt-primary" placeholder="Change">
+                </div>
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="text" name="newStatus" class="form-control form-txt-primary" placeholder="New Status">
+                </div>
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="text" name="rowsLeft" class="form-control form-txt-primary" placeholder="Rows Left">
+                </div>
+                <div class="col-md-12 waves-effect waves-light p-b-10">
+                    <input type="text" name="newBalance" class="form-control form-txt-primary" style="background-color: black;" placeholder="New Balance/Total Amount Due">
+                </div>
+        
+            </div>
+            <!-- <div class="col-md-3 waves-effect waves-light p-b-10">
+                <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+            </div> -->
+        </form>
+            <!-- end of eow -->
+        </div>
+    </div>
+    
+</div> 
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"> </script>  
+<script type = "text/javascript">  
+function calculate() {   
+ if(isNaN(document.forms["myform"]["selectPricing"].value) || document.forms["myform"]["selectPricing"].value=="") {   
+ var selectPricing = 0;   
+ } else {   
+ var selectPricing = parseInt(document.forms["myform"]["selectPricing"].value);   
+ } 
+ if(isNaN(document.forms["myform"]["kilos"].value) || document.forms["myform"]["kilos"].value=="") {   
+ var kilos = 0;   
+ } else {   
+ var kilos = parseInt(document.forms["myform"]["kilos"].value);   
+ }   
+ if(isNaN(document.forms["myform"]["sacks"].value) || document.forms["myform"]["sacks"].value=="") {   
+ var sacks = 0;   
+ } else {   
+ var sacks = parseFloat(document.forms["myform"]["sacks"].value);   
+ }
+ if(isNaN(document.forms["myform"]["kilosType"].value) || document.forms["myform"]["kilosType"].value=="") {   
+ var kilosType = 0;   
+ } else {   
+ var kilosType = parseFloat(document.forms["myform"]["kilosType"].value);   
+ } 
+ if(isNaN(document.forms["myform"]["inputKilos"].value) || document.forms["myform"]["inputKilos"].value=="") {   
+ var inputKilos = 0;   
+ } else {   
+ var  inputKilos= parseFloat(document.forms["myform"]["inputKilos"].value);   
+ }
+ if(isNaN(document.forms["myform"]["amount"].value) || document.forms["myform"]["amount"].value=="") {   
+ var amount = 0;   
+ } else {   
+ var amount = parseFloat(document.forms["myform"]["amount"].value);   
+ }
+ if(isNaN(document.forms["myform"]["kilos"].value) || document.forms["myform"]["kilos"].value=="") {   
+ var kilos = 0;   
+ } else {   
+ var kilos = parseFloat(document.forms["myform"]["kilos"].value);   
+ }
+ 
+ 
+
+ document.forms["myform"]["kilos"].value = (kilosType*sacks);
+ document.forms["myform"]["amount"].value = (selectPricing*inputKilos);
+ document.forms["myform"]["grandTotal"].value = (selectPricing*inputKilos);
+ document.forms["myform"]["itemSubtotal"].value = (sacks);
+ document.forms["myform"]["cavans"].value = (sacks);
+ document.forms["myform"]["inputKilos"].value = (kilos);
+
+
+ 
+     
+ }  
+</script> 
+
+
+<%- include('include/footer') %>

@@ -1,0 +1,334 @@
+<%- include('include/header') %>
+
+
+<div class="page-body">
+    <!-- Default color card start -->
+    <div class="card">
+        <div class="card-header">
+            <h5>Item Details</h5>
+        </div>
+        <fieldset>
+        <form action="/admin/api/inv" method="post" name="myform">
+        <div class="card-block">
+            <div class="row text-uppercase text-center">
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="date" name="iDate" class="form-control form-txt-primary" placeholder="Date">
+                </div>
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <select id="cars" name="iItem" class="form-control form-txt-primary" placeholder="Customer Name">
+                        <option value="Select Customer">Select Item</option>
+                        <% for(var i = 0; i < itemName.length; i++) { %>
+                          
+                        <option value="<%= itemName[i].itemName %>"><%= itemName[i].itemName %></option>
+                        
+                        
+                        <% } %>
+                      </select>
+                </div>
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="text" name="iType" class="form-control form-txt-primary" placeholder="Type">
+                </div>
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="number" name="iSacks" class="form-control form-txt-primary" onkeyup="sackCalculate(this.value)" placeholder="Sacks" >
+                </div>
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="number" disabled name="iKilos" class="form-control form-txt-primary" placeholder="Kilos">
+                </div>
+        
+            </div>
+            <!-- end of eow -->
+        </div>
+    </div>
+    
+<div class="page-body">
+    <!-- Default color card start -->
+    <div class="card">
+        <div class="card-header">
+            <h5>Price Details</h5>
+        </div>
+        <div class="card-block">
+            <div class="row text-uppercase text-center">
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="iRetail" onkeyup="calculate(this.value)" class="form-control form-txt-primary" placeholder="Retail">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="i5kg"  class="form-control form-txt-primary" placeholder="Less 5">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="i10kg"  class="form-control form-txt-primary" placeholder="Less 10">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="iMarket"  class="form-control form-txt-primary" placeholder= Market>
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="iTenc"  class="form-control form-txt-primary" placeholder="Ten Cavans">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="iwsMarket" class="form-control form-txt-primary" placeholder="WS Market">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="iwholeSale" class="form-control form-txt-primary" placeholder="Whole Sale">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="special1" class="form-control form-txt-primary" placeholder="Special 1">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="special2" class="form-control form-txt-primary" placeholder="Special 2">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="iDivert" class="form-control form-txt-primary" onkeyup="divert(this.value)" placeholder="Divert">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="buyingPrice" class="form-control form-txt-primary" onkeyup="buyingPriceCal(this.value)" placeholder="Buying Price">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="totalKilos" class="form-control form-txt-primary" placeholder="Total Kilos">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="totalBuyingPrice" class="form-control form-txt-primary" placeholder="Total Buying Price">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="overAllPriceRetail" class="form-control form-txt-primary" onkeyup="overAllCal(this.value)" placeholder="Over All Price Retail">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="gross" class="form-control form-txt-primary" onkeyup="grossCal(this.value)" placeholder="Gross">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="number" name="addedSacks" class="form-control form-txt-primary" readonly placeholder="Added Sacks">
+                </div>
+
+
+             
+
+              
+             
+            </div>
+            <div class="col-md-3 waves-effect waves-light p-b-10">
+                <button type="submit" class="btn btn-primary waves-effect waves-light">Add Items</button>
+            </div>
+            <!-- end of eow -->
+        </form>
+    </fieldset>
+        </div>
+    </div>
+    
+</div> 
+
+<div class="page-body">
+    <!-- Default color card start -->
+    <div class="card">
+        <div class="card-header">
+            <h5>Back Load</h5>
+        </div>
+        
+        <form action="/admin/api/backLoad" method="post">
+        <div class="card-block">
+            <div class="row text-uppercase text-center">
+            
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="datetime-local" name="dateTime" class="form-control form-txt-primary" placeholder="Date Time">
+                </div>
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <select id="cars" name="item" class="form-control form-txt-primary" placeholder="#">
+                        <option value="Select Customer">Select Item</option>
+                        <% for(var i = 0; i < itemName.length; i++) { %>
+                          
+                        <option value="<%= itemName[i].itemName %>"><%= itemName[i].itemName %></option>
+                        
+                        
+                        <% } %>
+                      </select>
+                </div>
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="text" name="number" class="form-control form-txt-primary" placeholder="Type">
+                </div>
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="text" name="remarks" class="form-control form-txt-primary" placeholder="Remarks">
+                </div>
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="text" name="encodedBy" class="form-control form-txt-primary" placeholder="Encoded By">
+                </div>
+                <div class="col-md-4 waves-effect waves-light p-b-10">
+                    <input type="text" name="number" class="form-control form-txt-primary" placeholder="Sacks">
+                </div>
+                <div class="col-md-2 waves-effect waves-light p-b-10">
+                    <input type="text" name="riceMill" class="form-control form-txt-primary" placeholder="Rice Mill">
+                </div>
+        
+            </div>
+            <div class="col-md-3 waves-effect waves-light p-b-10">
+                <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+            </div>
+        </form>
+            <!-- end of eow -->
+        </div>
+    </div>
+    
+</div> 
+
+
+
+<div class="page-body">
+    <!-- Default color card start -->
+    <div class="card">
+        <div class="card-header">
+            <h5>Add Item Name</h5>
+        </div>
+        
+        <form action="/admin/api/itemName" method="post">
+        <div class="card-block">
+            <div class="row text-uppercase text-center">
+                <div class="col-md-12 waves-effect waves-light p-b-10">
+                    <input type="text" name="itemName" class="form-control form-txt-primary" placeholder="Item Name">
+
+                    
+                </div>
+              
+        
+            </div>
+            <div class="col-md-3 waves-effect waves-light p-b-10">
+                <button type="submit" class="btn btn-primary waves-effect waves-light">Add Item Name</button>
+            </div>
+        </form>
+            <!-- end of eow -->
+        </div>
+    </div>
+    
+</div> 
+
+<!-- javascript for computation -->
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"> </script>  
+<script type = "text/javascript"> 
+
+
+
+function sackCalculate() {   
+ if(isNaN(document.forms["myform"]["iSacks"].value) || document.forms["myform"]["iSacks"].value=="") {   
+ var text1 = 0;   
+ } else {   
+ var text1 = parseInt(document.forms["myform"]["iSacks"].value);   
+ } 
+ if(isNaN(document.forms["myform"]["iType"].value) || document.forms["myform"]["iType"].value=="") {   
+ var text3 = 0;   
+ } else {   
+ var text3 = parseInt(document.forms["myform"]["iType"].value);   
+ }   
+  
+ document.forms["myform"]["iKilos"].value = (text1*text3);
+ document.forms["myform"]["addedSacks"].value = (text1);
+ 
+   
+ }
+
+
+
+
+
+
+
+function calculate(){   
+
+ if(isNaN(document.forms["myform"]["iType"].value) || document.forms["myform"]["iType"].value=="") {   
+ var text3 = 0;   
+ } else {   
+ var text3 = parseInt(document.forms["myform"]["iType"].value);   
+ }   
+ if(isNaN(document.forms["myform"]["iRetail"].value) || document.forms["myform"]["iRetail"].value=="") {   
+ var text2 = 0;   
+ } else {   
+ var text2 = parseFloat(document.forms["myform"]["iRetail"].value);   
+ }   
+ document.forms["myform"]["i5kg"].value = (text3*text2);
+ document.forms["myform"]["i10kg"].value = (text3*text2);
+ document.forms["myform"]["iMarket"].value = (text3*text2);
+ document.forms["myform"]["iTenc"].value = (text3*text2-10);
+ document.forms["myform"]["iwsMarket"].value = (text3*text2-20); 
+ document.forms["myform"]["iwholeSale"].value = (text3*text2-20);
+   
+ }
+
+ function divert(){
+
+    if(isNaN(document.forms["myform"]["iDivert"].value) || document.forms["myform"]["iDivert"].value=="") {   
+ var text1 = 0;   
+ } else {   
+ var text1 = parseInt(document.forms["myform"]["iDivert"].value);   
+ } 
+ if(isNaN(document.forms["myform"]["iType"].value) || document.forms["myform"]["iType"].value=="") {   
+ var text3 = 0;   
+ } else {   
+ var text3 = parseInt(document.forms["myform"]["iType"].value);   
+ }   
+ if(isNaN(document.forms["myform"]["iKilos"].value) || document.forms["myform"]["iKilos"].value=="") {   
+ var text4 = 0;   
+ } else {   
+ var text4 = parseInt(document.forms["myform"]["iKilos"].value);   
+ } 
+ document.forms["myform"]["totalKilos"].value = ((text1*text3)+text4);
+ 
+
+
+ }
+
+ function buyingPriceCal(){
+    
+ 
+ if(isNaN(document.forms["myform"]["buyingPrice"].value) || document.forms["myform"]["buyingPrice"].value=="") {   
+ var text3 = 0;   
+ } else {   
+ var text3 = parseInt(document.forms["myform"]["buyingPrice"].value);   
+ }   
+ if(isNaN(document.forms["myform"]["iKilos"].value) || document.forms["myform"]["iKilos"].value=="") {   
+ var text4 = 0;   
+ } else {   
+ var text4 = parseInt(document.forms["myform"]["iKilos"].value);   
+ } 
+ document.forms["myform"]["totalBuyingPrice"].value = (text3*text4);
+ 
+
+ }
+
+ function overAllCal(){
+   
+    
+    if(isNaN(document.forms["myform"]["iRetail"].value) || document.forms["myform"]["iRetail"].value=="") {   
+ var text3 = 0;   
+ } else {   
+ var text3 = parseInt(document.forms["myform"]["iRetail"].value);   
+ }   
+ if(isNaN(document.forms["myform"]["totalKilos"].value) || document.forms["myform"]["totalKilos"].value=="") {   
+ var text4 = 0;   
+ } else {   
+ var text4 = parseInt(document.forms["myform"]["totalKilos"].value);   
+ } 
+ document.forms["myform"]["overAllPriceRetail"].value = (text3*text4);
+ 
+ }
+ 
+
+ function grossCal(){
+   
+    
+   if(isNaN(document.forms["myform"]["totalBuyingPrice"].value) || document.forms["myform"]["totalBuyingPrice"].value=="") {   
+var text3 = 0;   
+} else {   
+var text3 = parseInt(document.forms["myform"]["totalBuyingPrice"].value);   
+}   
+if(isNaN(document.forms["myform"]["overAllPriceRetail"].value) || document.forms["myform"]["overAllPriceRetail"].value=="") {   
+var text4 = 0;   
+} else {   
+var text4 = parseInt(document.forms["myform"]["overAllPriceRetail"].value);   
+} 
+document.forms["myform"]["gross"].value = (text4-text3);
+
+}
+
+
+
+
+ 
+
+</script> 
+
+<%- include('include/footer') %>

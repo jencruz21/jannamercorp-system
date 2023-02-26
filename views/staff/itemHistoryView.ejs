@@ -1,0 +1,197 @@
+<%- include('include/header') %>
+
+<!-- Page-header end -->
+<div class="pcoded-inner-content">
+  <!-- Main-body start -->
+  <div class="main-body">
+      <div class="page-wrapper">
+          <!-- Page-body start -->
+          <div class="page-body">
+              <!-- Default color card start -->
+              <div class="card">
+                  <div class="card-header">
+                      <h5>Item Counter</h5>
+                  </div>
+                  <div class="card-block">
+                      <div class="row text-uppercase text-center">
+                          <div class="col-md-2 waves-effect waves-light p-b-10"><p>For Column</p>
+                              <div class="bg-inverse p-10"> <select id="cars" name="cars">
+                                <option value="volvo">Volvo XC90</option>
+                                <option value="saab">Saab 95</option>
+                                <option value="mercedes">Mercedes SLK</option>
+                                <option value="audi">Audi TT</option>
+                              </select></div>
+                          </div>
+                          <div class="col-md-2 waves-effect waves-light p-b-10"><p>Search For:</p>
+                              <div class="bg-inverse p-10 "><input type="text"></div>
+                          </div>
+                          <div class="col-md-2 waves-effect waves-light p-b-10"><p>From Date</p>
+                              <div class="bg-inverse p-10"><input type="date"></div>
+                          </div>
+                          <div class="col-md-2 waves-effect waves-light p-b-10"><p>To Date</p>
+                              <div class="bg-inverse p-10"><input type="date"></div>
+                          </div>
+                          <div class="col-md-2 waves-effect waves-light p-b-10"><p>button</p>
+                            <div class="bg-primary p-10"><button>Refresh</button></div>
+                        </div>
+                        
+                       
+                       
+                      </div>
+                      <!-- end of eow -->
+                  </div>
+              </div>
+              
+          </div>
+
+          <div class="page-body">
+              <!-- Default color card start -->
+              <div class="card">
+                  <div class="card-header">
+                      <h5>Sacks Per Kg.</h5>
+                  </div>
+                  <div class="card-block">
+                      <div class="row text-uppercase text-center">
+                          <div class="col-md-2 waves-effect waves-light p-b-10"><p>Total 1kg</p>
+                              <div class="bg-inverse p-10"><p>#BDC3C7</p></div>
+                          </div>
+                          <div class="col-md-2 waves-effect waves-light p-b-10"><p>Total 2kg</p>
+                              <div class="bg-inverse p-10 "><p>#BDC3C7</p></div>
+                          </div>
+                          <div class="col-md-2 waves-effect waves-light p-b-10"><p>Total 5kg</p>
+                              <div class="bg-inverse p-10"><p>#BDC3C7</p></div>
+                          </div>
+                          <div class="col-md-2 waves-effect waves-light p-b-10"><p>Total 10kg</p>
+                            <div class="bg-inverse p-10"><p>#BDC3C7</p></div>
+                        </div>
+                        <div class="col-md-2 waves-effect waves-light p-b-10"><p>Total 25kg</p>
+                            <div class="bg-inverse p-10"><p>#BDC3C7</p></div>
+                        </div>
+                        <div class="col-md-2 waves-effect waves-light p-b-10"><p>button</p>
+                            <div class="bg-primary p-10"><button>Refresh</button></div>
+                        </div>
+                          
+                         
+                      </div>
+                      <!-- end of eow -->
+                  </div>
+              </div>
+              
+          </div>
+
+          <div class="page-body">
+            <!-- Default color card start -->
+            <div class="card">
+                <div class="card-header">
+                    <h5>Total Subtotal</h5>
+                </div>
+                <div class="card-block">
+                    <div class="row text-uppercase text-center">
+                        <div class="col-md-2 waves-effect waves-light p-b-10"><p>Subtotal</p>
+                            <div class="bg-inverse p-10"><p>#BDC3C7</p></div>
+                        </div>
+                        <div class="col-md-2 waves-effect waves-light p-b-10"><p>Total Cavans</p>
+                            <div class="bg-inverse p-10 "><p>#BDC3C7</p></div>
+                        </div>
+                        <div class="col-md-2 waves-effect waves-light p-b-10"><p>By Half Cavans</p>
+                            <div class="bg-inverse p-10"><p>#BDC3C7</p></div>
+                        </div>
+                        <div class="col-md-2 waves-effect waves-light p-b-10"><p>View Sacks By:</p>
+                          <div class="bg-inverse p-10"> <select id="cars" name="cars">
+                            <option value="volvo">Volvo XC90</option>
+                            <option value="saab">Saab 95</option>
+                            <option value="mercedes">Mercedes SLK</option>
+                            <option value="audi">Audi TT</option>
+                          </select></div></div>
+                      </div>
+                    
+                  
+                       
+                    </div>
+                    <!-- end of eow -->
+                </div>
+            </div>
+            
+        </div>
+          <!-- Page-body end -->
+      </div>
+  </div>
+  <!-- Main-body start -->
+
+
+
+
+  <div class="card-block table-border-style" style="overflow-y:scroll;height:500px;">
+    <div class="table-responsive">
+        <h5>Inventory List</h5>
+        <table class="table table-dark">
+           
+            <thead>
+                <tr>
+                    <th style="background-color: blue;">#</th>
+                    <th style="background-color: blue;">Date</th>
+                    <th style="background-color: blue;">Item</th>
+                    <th style="background-color: blue;">Type</th>
+                    <th style="background-color: blue;">Sacks</th>
+                    <th style="background-color: blue;">Retail</th>
+                    <th style="background-color: blue;">Less 5kg</th>
+                    <th style="background-color: blue;">Less 10kg</th>
+                    <th style="background-color: blue;">Market</th>
+                    <th style="background-color: blue;">TENC</th>
+                    <th style="background-color: blue;">W.S. Market</th>
+                    <th style="background-color: blue;">WholeSale</th>
+                    <th style="background-color: blue;">Special 1</th>
+                    <th style="background-color: blue;">Special 2</th>
+                    <th style="background-color: blue;">Divert</th>
+                    <th style="background-color: blue;">Buying Price</th>
+                    <th style="background-color: blue;">Total Kilos</th>
+                    <th style="background-color: blue;">Total Buying Price</th>
+                    <th style="background-color: blue;">Over All Price Retail</th>
+                    <th style="background-color: blue;">Gross</th>
+                
+                </tr>
+               
+            </thead>
+            <tbody>
+                <% for(var i = 0; i < stocks.length; i++) { %>
+                <tr>
+                  
+                    <th><%= i + 1 %></th>
+                    <td><%= stocks[i].i_date %></td>
+                   <td><%= stocks[i].i_item %></td>
+                   <td><%= stocks[i].i_type %></td>
+                   <td><%= stocks[i].i_sacks %></td>
+                   <td><%= stocks[i].i_retail %></td>
+                   <td><%= stocks[i].i_5kg %></td>
+                   <td><%= stocks[i].i_10kg %></td>
+                   <td><%= stocks[i].i_market %></td>
+                   <td><%= stocks[i].i_tenC %></td>
+                   <td><%= stocks[i].i_wsMarket %></td>
+                   <td><%= stocks[i].i_wholeSale %></td>
+                   <td><%= stocks[i].i_special1 %></td>
+                   <td><%= stocks[i].i_special2 %></td>
+                   <td><%= stocks[i].i_divert %></td>
+                   <td><%= stocks[i].i_buyingPrice %></td>
+                   <td><%= stocks[i].i_totalKilos %></td>
+                   <td><%= stocks[i].i_totalBuyingPrice %></td>
+                   <td><%= stocks[i].i_overAllPriceRetail %></td>
+                   <td><%= stocks[i].i_gross %></td>
+                  
+              
+                  
+
+                 
+
+                </tr>
+                <% } %>
+        
+             
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+
+
+
+<%- include('include/footer') %>

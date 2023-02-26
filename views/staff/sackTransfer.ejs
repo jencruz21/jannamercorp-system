@@ -1,0 +1,224 @@
+<%- include('include/header') %>
+
+<!-- Page-header end -->
+<div class="pcoded-inner-content">
+  <!-- Main-body start -->
+  <div class="main-body">
+      <div class="page-wrapper">
+          <!-- Page-body start -->
+          <div class="page-body">
+              <!-- Default color card start -->
+              <div class="card">
+                  <div class="card-header">
+                      <h5>From Item</h5>
+                  </div> 
+                  <form action="/admin/api/sacksTransfer" method="post" name="myform">
+                  <div class="card-block">
+                      <div class="row text-uppercase text-center">
+                         
+                          <div class="col-md-6 waves-effect waves-light p-b-10"><p>Select Item</p>
+                              <div class="bg-inverse p-10 "> <select id="cars" name="selectItemOne" class="form-control form-txt-primary" placeholder="#">
+                                <option value="Select Customer">Select Item</option>
+                                <% for(var i = 0; i < itemName.length; i++) { %>
+                                  
+                                <option value="<%= itemName[i].itemName %>"><%= itemName[i].itemName %></option>
+                                
+                                
+                                <% } %>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-md-6 waves-effect waves-light p-b-10"><p>Type</p>
+                              <div class="bg-inverse p-10"> 
+                                <input type="number" name="riceTypeOne" class="form-control form-txt-primary" placeholder="Input Type">
+                            </div>
+                          </div>
+                          <div class="col-md-6 waves-effect waves-light p-b-10"><p>Total Sacks</p>
+                              <div class="bg-inverse p-10"> <input type="number" onkeyup="calculate(this.value)"  name="sacksOne" class="form-control form-txt-primary" placeholder="Input Total Sacks"></div>
+                          </div>
+                          <div class="col-md-6 waves-effect waves-light p-b-10"><p>Total Kilos</p>
+                            <div class=" p-10"  style="background-color: dodgerblue;"><input type="number" readonly name="kilosOne" class="form-control form-txt-primary" placeholder="Total Kilos"></div>
+                        </div>
+                       
+                        
+                       
+                       
+                      </div>
+                      <!-- end of eow -->
+                  </div>
+              </div>
+              
+          </div>
+
+    
+          <div class="page-body">
+            <!-- Default color card start -->
+            <div class="card">
+                <div class="card-header">
+                    <h5>To Item</h5>
+                </div>
+                <div class="card-block">
+                    <div class="row text-uppercase text-center">
+                       
+                        <div class="col-md-6 waves-effect waves-light p-b-10"><p>Select Item</p>
+                            <div class="bg-inverse p-10 ">  <select id="cars" name="selectItemTwo" class="form-control form-txt-primary" placeholder="#">
+                                <option value="Select Customer">Select Item</option>
+                                <% for(var i = 0; i < itemName.length; i++) { %>
+                                  
+                                <option value="<%= itemName[i].itemName %>"><%= itemName[i].itemName %></option>
+                                
+                                
+                                <% } %>
+                              </select></div>
+                        </div>
+                        <div class="col-md-6 waves-effect waves-light p-b-10"><p>Type</p>
+                           
+                            <div class="bg-inverse p-10"> 
+                                 <input type="number" name="riceTypeTwo" class="form-control form-txt-primary" placeholder="Input Type">
+                                </div>
+                           
+                        </div>
+                        <div class="col-md-6 waves-effect waves-light p-b-10"><p>Total Sacks</p>
+                            <div class="bg-inverse p-10">
+                                 <input type="number" name="sacksTwo" onkeyup="calculateTwo(this.value)"  class="form-control form-txt-primary" placeholder="Total Sacks Transfer">
+                                </div>
+                        </div>
+                        <div class="col-md-6 waves-effect waves-light p-b-10"><p>Total Kilos</p>
+                          <div class=" p-10" style="background-color: dodgerblue;">
+                            <input type="number" readonly name="kilosTwo" class="form-control form-txt-primary" placeholder="Total Kilos">
+                        </div>
+                      </div>
+                  
+                      
+                     
+                    </div>
+                    <!-- end of eow -->
+                </div>
+            </div>
+            
+        </div>
+        <div class="page-body">
+            <!-- Default color card start -->
+            <div class="card">
+                <div class="card-header">
+                    <h5>New Item Total</h5>
+                </div>
+                <div class="card-block">
+                    <div class="row text-uppercase text-center">
+                        <div class="col-md-3 waves-effect waves-light p-b-10"><p>Date Time</p>
+                            <div class="bg-inverse p-10"><input type="datetime-local"  name="dateTime" class="form-control form-txt-primary" placeholder="New Kilos"></div>
+                        </div>
+                        <div class="col-md-3 waves-effect waves-light p-b-10"><p>Sacks Added</p>
+                            <div class="bg-inverse p-10 "><input type="number" readonly name="sacksAdded" class="form-control form-txt-primary" placeholder="Sacks Added"></div>
+                        </div>
+                        <div class="col-md-3 waves-effect waves-light p-b-10"><p>Kilos Added</p>
+                            <div class="bg-inverse p-10"><input type="text" readonly name="kilosAdded" class="form-control form-txt-primary" placeholder="Kilos Added"></div>
+                        </div>
+                        <div class="col-md-3 waves-effect waves-light p-b-10"><p>New Sacks Added</p>
+                            <div class="bg-inverse p-10"><input type="text" readonly name="newSacksAdded" class="form-control form-txt-primary" placeholder="New Item"></div>
+                        </div>
+                        <div class="col-md-3 waves-effect waves-light p-b-10"><p>New Kilos Added</p>
+                          <div class="bg-inverse p-10"><input type="text" readonly name="newKilosAdded" class="form-control form-txt-primary" placeholder="New Kilos"></div>
+                      </div>
+                
+                      
+                      <div class="col-md-3 waves-effect waves-light p-b-10"><p>Button</p>
+                        <div class="p-10" style="background-color: cadetblue;"><button type="submit" class="form-control " style="background-color: cornflowerblue; cursor: pointer;">Transfer</button></div>
+                    </div>
+                    
+                   
+                    </div>
+                </form>
+                    <!-- end of eow -->
+                </div>
+            </div>
+            
+        </div>
+        
+          <!-- Page-body end -->
+      </div>
+  </div>
+  <!-- Main-body start -->
+
+
+
+
+
+
+  <div id="styleSelector">
+
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"> </script>  
+<script type = "text/javascript"> 
+
+function calculate() {   
+ if(isNaN(document.forms["myform"]["riceTypeOne"].value) || document.forms["myform"]["riceTypeOne"].value=="") {   
+ var riceTypeOne = 0;   
+ } else {   
+ var riceTypeOne = parseInt(document.forms["myform"]["riceTypeOne"].value);   
+ } 
+ if(isNaN(document.forms["myform"]["sacksOne"].value) || document.forms["myform"]["sacksOne"].value=="") {   
+ var sacksOne = 0;   
+ } else {   
+ var sacksOne = parseInt(document.forms["myform"]["sacksOne"].value);   
+ } 
+
+ document.forms["myform"]["kilosOne"].value = (riceTypeOne*sacksOne);
+  
+ }  
+
+
+
+ function calculateTwo() {
+    if(isNaN(document.forms["myform"]["riceTypeTwo"].value) || document.forms["myform"]["riceTypeTwo"].value=="") {   
+ var riceTypeTwo = 0;   
+ } else {   
+ var riceTypeTwo = parseInt(document.forms["myform"]["riceTypeTwo"].value);   
+ } 
+ if(isNaN(document.forms["myform"]["sacksTwo"].value) || document.forms["myform"]["sacksTwo"].value=="") {   
+ var sacksTwo = 0;   
+ } else {   
+ var sacksTwo = parseInt(document.forms["myform"]["sacksTwo"].value);   
+ } 
+
+ if(isNaN(document.forms["myform"]["kilosOne"].value) || document.forms["myform"]["kilosOne"].value=="") {   
+ var kilosOne = 0;   
+ } else {   
+ var kilosOne = parseInt(document.forms["myform"]["kilosOne"].value);   
+ } 
+ if(isNaN(document.forms["myform"]["selectItemTwo"].value) || document.forms["myform"]["selectItemTwo"].value=="") {   
+ var selectItemTwo = 0;   
+ } else {   
+ var selectItemTwo = parseInt(document.forms["myform"]["selectItemTwo"].value);   
+ } 
+ if(isNaN(document.forms["myform"]["sacksOne"].value) || document.forms["myform"]["sacksOne"].value=="") {   
+ var sacksOne = 0;   
+ } else {   
+ var sacksOne = parseInt(document.forms["myform"]["sacksOne"].value);   
+ } 
+
+ document.forms["myform"]["kilosTwo"].value = (riceTypeTwo*sacksTwo);
+ document.forms["myform"]["newSacksAdded"].value = (kilosOne/riceTypeTwo);
+ document.forms["myform"]["sacksAdded"].value = (sacksOne);
+ document.forms["myform"]["kilosAdded"].value = (kilosOne);
+ document.forms["myform"]["newKilosAdded"].value = ((riceTypeTwo*sacksTwo)+kilosOne);
+
+
+
+ }
+
+
+
+</script>
+
+
+
+
+<%- include('include/footer') %>

@@ -1,0 +1,154 @@
+<%- include('include/header') %>
+
+
+
+<div class="page-body">
+    <!-- Default color card start -->
+    <div class="card">
+        <div class="card-header">
+            <h5>Delivery Details</h5>
+        </div>
+        <fieldset>
+        <form action="/admin/api/orderingDetails" method="post" name="myform">
+        <div class="card-block">
+            <div class="row text-uppercase text-center">
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="Number" name="date" class="form-control form-txt-primary" style="background-color: rgb(47, 47, 187);" placeholder="Total">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="text" name="itemName" class="form-control form-txt-primary" style="background-color: rgb(58, 58, 189);" placeholder="Grand Total">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="text" name="selectPricing" class="form-control form-txt-primary"  style="background-color: rgb(63, 63, 184);" placeholder="Total Balance">
+                </div>
+                <div class="col-md-3 waves-effect waves-light p-b-10">
+                    <input type="text" name="price" class="form-control form-txt-primary"  style="background-color: rgb(63, 63, 184);" placeholder="Total Cavans">
+                </div>
+               
+             
+        
+            </div>
+            <!-- end of eow -->
+        </div>
+    </div>
+    
+
+    <div class="page-body">
+        <!-- Default color card start -->
+        <div class="card">
+            <div class="card-header">
+                <h5>Select Options</h5>
+            </div>
+            <fieldset>
+            <form action="/admin/api/orderingDetails" method="post" name="myform">
+            <div class="card-block">
+                <div class="row text-uppercase text-center">
+                    <div class="col-md-3 waves-effect waves-light p-b-10">
+                        <input type="Number" name="date" class="form-control form-txt-primary" style="background-color: rgb(183, 188, 190);" placeholder="Total">
+                    </div>
+                    <div class="col-md-3 waves-effect waves-light p-b-10">
+                        <input type="text" name="itemName" class="form-control form-txt-primary" style="background-color: rgb(183, 188, 190);" placeholder="Grand Total">
+                    </div>
+                    <div class="col-md-3 waves-effect waves-light p-b-10">
+                        <input type="text" name="selectPricing" class="form-control form-txt-primary"  style="background-color: rgb(183, 188, 190);" placeholder="Total Balance">
+                    </div>
+                    <div class="col-md-3 waves-effect waves-light p-b-10">
+                        <input type="text" name="price" class="form-control form-txt-primary"  style="background-color: rgb(183, 188, 190);" placeholder="Total Cavans">
+                    </div>
+                   
+                 
+            
+                </div>
+                <!-- end of eow -->
+            </div>
+        </div>
+
+        <h4 class="title">Delivery Details</h4>
+      
+        <div class="card">
+            <div class="card-header">
+                <h5>Customer List</h5>
+                <!-- <span>use class <code>table-dark</code> inside table element</span> -->
+                <div class="card-header-right">
+                    <ul class="list-unstyled card-option">
+                        <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                        <li><i class="fa fa-window-maximize full-card"></i></li>
+                        <li><i class="fa fa-minus minimize-card"></i></li>
+                        <li><i class="fa fa-refresh reload-card"></i></li>
+                        <li><i class="fa fa-trash close-card"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-block table-border-style" style="overflow-y:scroll;height:500px;">
+                <div class="table-responsive">
+                    <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                
+                                <th>Date</th>
+                                <th>Customer Name</th>
+                                <th>Item Name</th>
+                                <th>Route</th>
+                                <th>Sacks</th>
+                                <th>Kilos</th>
+                                <th>Amount</th>
+                                <th>Previous Remitance</th>
+                                <th>Is Cleared</th>
+                                <th>Credit Limit</th>
+                                <th>Transaction</th>
+                                <th>Addons</th>
+                                <th>Less</th>
+                               
+                                <th>Cash Remited</th>
+                                <th>Check Value</th>
+                                <th>Check Number</th>
+                                <th>Check Date</th>
+                                <th>Item Subtotal</th>
+                                <th>Grand Total</th>
+                                <th>Balance</th>
+                                <th>Contact Number</th>
+                                <th>Status</th>
+                           
+                                
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i = 0; i < delivery.length; i++) { %>
+                            <tr>
+                                <th scope="row"><%= i + 1 %></th>
+        
+                                <td><%=delivery[i].od_date %></td>
+                                <td><%=delivery[i].od_customer %></td>
+                                <td><%=delivery[i].od_itemName %></td>
+                                <td><%=delivery[i].od_route %></td>
+                                <td><%=delivery[i].od_cavans %></td>
+                                <td><%=delivery[i].od_kilos %></td>
+                                <td><%=delivery[i].od_amount %></td>
+                                <td><%=delivery[i].od_previousRemitance %></td>
+                                <td><%=delivery[i].od_isCleared %></td>
+                                <td><%=delivery[i].od_creditLimit %></td>
+                                <td><%=delivery[i].od_transaction %></td>
+                                <td><%=delivery[i].od_addOns %></td>
+                                <td><%=delivery[i].od_less %></td>
+                                <td><%=delivery[i].od_cashRemited %></td>
+                                <td><%=delivery[i].od_checkValue %></td>
+                                <td><%=delivery[i].od_checkNumber %></td>
+                                <td><%=delivery[i].od_checkDate %></td>
+                                <td><%=delivery[i].od_itemSubtotal %></td>
+                                <td><%=delivery[i].od_grandTotal %></td>
+                                <td><%=delivery[i].od_newBalance %></td>
+                                <td><%=delivery[i].od_number %></td>
+                                <td><%=delivery[i].od_newStatus %></td>
+                            </tr>
+                            <% } %>
+                         
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+
+<%- include('include/footer') %>

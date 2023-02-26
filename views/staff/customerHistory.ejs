@@ -1,0 +1,91 @@
+<%- include('include/header') %>
+
+        <h4 class="title">Customer History</h4>
+      
+<div class="card">
+    <div class="card-header">
+        <h5>Customer List</h5>
+        <!-- <span>use class <code>table-dark</code> inside table element</span> -->
+        <div class="card-header-right">
+            <ul class="list-unstyled card-option">
+                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                <li><i class="fa fa-window-maximize full-card"></i></li>
+                <li><i class="fa fa-minus minimize-card"></i></li>
+                <li><i class="fa fa-refresh reload-card"></i></li>
+                <li><i class="fa fa-trash close-card"></i></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-block table-border-style" style="overflow-y:scroll;height:500px;">
+        <div class="table-responsive">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        
+                        <th>Date</th>
+                        <th>Customer Name</th>
+                        <th>Item Name</th>
+                        <th>Route</th>
+                        <th>Sacks</th>
+                        <th>Kilos</th>
+                        <th>Amount</th>
+                        <th>Previous Remitance</th>
+                        <th>Is Cleared</th>
+                        <th>Credit Limit</th>
+                        <th>Transaction</th>
+                        <th>Addons</th>
+                        <th>Less</th>
+                       
+                        <th>Cash Remited</th>
+                        <th>Check Value</th>
+                        <th>Check Number</th>
+                        <th>Check Date</th>
+                        <th>Item Subtotal</th>
+                        <th>Grand Total</th>
+                        <th>Balance</th>
+                        <th>Contact Number</th>
+                        <th>Status</th>
+                   
+                        
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i = 0; i < customerHis.length; i++) { %>
+                    <tr>
+                        <th scope="row"><%= i + 1 %></th>
+
+                        <td><%=customerHis[i].od_date %></td>
+                        <td><%=customerHis[i].od_customer %></td>
+                        <td><%=customerHis[i].od_itemName %></td>
+                        <td><%=customerHis[i].od_route %></td>
+                        <td><%=customerHis[i].od_cavans %></td>
+                        <td><%=customerHis[i].od_kilos %></td>
+                        <td><%=customerHis[i].od_amount %></td>
+                        <td><%=customerHis[i].od_previousRemitance %></td>
+                        <td><%=customerHis[i].od_isCleared %></td>
+                        <td><%=customerHis[i].od_creditLimit %></td>
+                        <td><%=customerHis[i].od_transaction %></td>
+                        <td><%=customerHis[i].od_addOns %></td>
+                        <td><%=customerHis[i].od_less %></td>
+                        <td><%=customerHis[i].od_cashRemited %></td>
+                        <td><%=customerHis[i].od_checkValue %></td>
+                        <td><%=customerHis[i].od_checkNumber %></td>
+                        <td><%=customerHis[i].od_checkDate %></td>
+                        <td><%=customerHis[i].od_itemSubtotal %></td>
+                        <td><%=customerHis[i].od_grandTotal %></td>
+                        <td><%=customerHis[i].od_newBalance %></td>
+                        <td><%=customerHis[i].od_number %></td>
+                        <td><%=customerHis[i].od_newStatus %></td>
+                  
+                    </tr>
+                    <% } %>
+                 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include('include/footer') %>

@@ -1,0 +1,78 @@
+<%- include('include/header') %>
+
+
+
+
+<div class="card">
+    <div class="card-header">
+        <h5>Sack Transfer History</h5>
+        <!-- <span>use class <code>table-dark</code> inside table element</span> -->
+        <div class="card-header-right">
+            <ul class="list-unstyled card-option">
+                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                <li><i class="fa fa-window-maximize full-card"></i></li>
+                <li><i class="fa fa-minus minimize-card"></i></li>
+                <li><i class="fa fa-refresh reload-card"></i></li>
+                <li><i class="fa fa-trash close-card"></i></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-block table-border-style" style="overflow-y:scroll;height:500px;">
+        <div class="table-responsive">
+            <table class="table table-dark">
+               
+                <thead>
+                    <tr>
+                        <th style="background-color: darkblue;">#</th>
+                        <th style="background-color: darkblue;">Date Time</th>
+                        <th style="background-color: darkblue;">From Item Name</th>
+                        <th style="background-color: darkblue;">Type</th>
+                        <th style="background-color: darkblue;">Total Sacks</th>
+                        <th style="background-color: darkblue;">Total Kilos</th>
+                        <th style="background-color: darkblue;">Transfer To</th>
+                        <th style="background-color: darkblue;">To Item Name</th>
+                        <th style="background-color: darkblue;">Type</th>
+                        <th style="background-color: darkblue;">Total Sacks</th>
+                        <th style="background-color: darkblue;">Total Kilos</th>
+                        <th style="background-color: darkblue;">Sacks Added</th>
+                        <th style="background-color: darkblue;">Kilos Added</th>
+                        <th style="background-color: darkblue;">New Sacks Added</th>
+                        <th style="background-color: darkblue;">New Kilos Added</th>
+
+                    </tr>
+                   
+                </thead>
+                <tbody>
+                    <% for(var i = 0; i < sacksTransfer.length; i++) { %>
+                    <tr>
+                      
+                        <th><%= i + 1 %></th>
+                     <td style="background-color: royalblue;"><%=sacksTransfer[i].dateTime %></td>
+                     <td style="background-color: royalblue;"><%=sacksTransfer[i].itemOne %></td>
+                     <td style="background-color: royalblue;"><%=sacksTransfer[i].typeOne %></td>
+                     <td style="background-color: royalblue;"><%=sacksTransfer[i].sacksOne%></td>
+                     <td style="background-color: royalblue;"><%=sacksTransfer[i].kilosOne%></td>
+                     <td style="background-color: darkgreen;"><%=   ("Transfer To") %></td>
+                     <td style="background-color: royalblue;"><%=sacksTransfer[i].itemTwo %></td>
+                     <td style="background-color: royalblue;"><%=sacksTransfer[i].typeTwo%></td>
+                     <td style="background-color: royalblue;"><%=sacksTransfer[i].sacksTwo%></td>
+                     <td style="background-color: royalblue;"><%=sacksTransfer[i].kilosTwo%></td>
+                     <td style="background-color: royalblue;"><%=sacksTransfer[i].sacksAdded%></td>
+                     <td style="background-color: royalblue;"><%=sacksTransfer[i].kilosAdded%></td>
+                     <td style="background-color: royalblue;"><%=sacksTransfer[i].newSacksAdded%></td>
+                     <td style="background-color: royalblue;"><%=sacksTransfer[i].newKilosAdded%></td>
+
+                     
+
+                    </tr>
+                    <% } %>
+            
+                 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<%- include('include/footer') %>
