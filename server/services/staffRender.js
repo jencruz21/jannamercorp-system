@@ -1,11 +1,12 @@
 const axios = require('axios');
+require("dotenv").config();
 
 
 
 //Customer
 exports.staffCustomer = (req,res) =>{
 
-    axios.get("/admin/api/getCustomer")
+    axios.get(`${SYSTEM_URL}/admin/api/getCustomer`)
     .then(function(response){
       console.log(response.data)
       return res.render('staff/customer',{customer:response.data})
@@ -18,7 +19,7 @@ exports.staffCustomer = (req,res) =>{
 }
 
 exports.staffCustomerHis = (req,res) =>{
-    axios.get("/admin/api/orderingDetails")
+    axios.get(`${SYSTEM_URL}/admin/api/orderingDetails`)
     .then(function(response){
       console.log(response.data)
     return res.render('staff/customerHistory',{customerHis:response.data})
@@ -30,7 +31,7 @@ exports.staffCustomerHis = (req,res) =>{
 
 exports.staffCustomerView = (req,res)=>{
 
-    axios.get("/admin/api/orderingDetails","/admin/api/inv")
+    axios.get(`${SYSTEM_URL}/admin/api/orderingDetails`,`${SYSTEM_URL}/admin/api/inv`)
     .then(function(response){
         return res.render('staff/customerView',{orderingDetails:response.data})
         console.log(response)
@@ -50,7 +51,7 @@ exports.staffOrderingDetails = (req,res)=>{
 }
 
 exports.customerRecord = (req,res)=>{
-    axios.get("/admin/api/getCustomer")
+    axios.get(`${SYSTEM_URL}/admin/api/getCustomer`)
     .then(function(response){
         console.log(response.data)
         return res.render("staff/customerRecord",{custRecord:response.data})
@@ -64,7 +65,7 @@ exports.customerRecord = (req,res)=>{
 
 //Inventory
 exports.staffInv = (req,res)=>{
-    axios.get("/admin/api/itemName")
+    axios.get(`${SYSTEM_URL}/admin/api/itemName`)
     .then(function(response){
         console.log(response.data)
         return res.render("staff/inventory",{itemName:response.data})
@@ -75,7 +76,7 @@ exports.staffInv = (req,res)=>{
 }
 
 exports.staffInvHis = (req,res)=>{
-    axios.get("/admin/api/invHis")
+    axios.get(`${SYSTEM_URL}/admin/api/invHis`)
     .then(function(response){
         console.log(response.data)
         return res.render("staff/inventoryHistory",{invHis:response.data})
@@ -87,7 +88,7 @@ exports.staffInvHis = (req,res)=>{
 }
 
 exports.staffViewSocks = (req,res)=>{
-    axios.get("/admin/api/inv")
+    axios.get(`${SYSTEM_URL}/admin/api/inv`)
     .then(function(response){
         console.log(response.data)
         return res.render('staff/viewStocks',{stocks:response.data})

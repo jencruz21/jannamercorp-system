@@ -48,4 +48,4 @@ app.use("/staff",require('./server/routes/staff'));
 
 
 
-app.listen(PORT,()=>{ console.log(`Server is running on ${PORT}`)})
+app.listen(PORT,()=>{ console.log(`Server is running on ${SYSTEM_URL}:${PORT}`)})
