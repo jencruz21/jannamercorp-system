@@ -3,7 +3,7 @@ window.onload = () => {
     const adminLineChart = document.getElementById("lineChart");
     const adminLineChart2 = document.getElementById("lineChart2");
 
-    fetch("http://localhost:3000/admin/api/charts_total_ordering_sales", {
+    fetch("/admin/api/charts_total_ordering_sales", {
         method: "GET",
         headers: {
             "Accepts": "application/json",
@@ -44,7 +44,7 @@ window.onload = () => {
   
 
   // to be fixed
-  fetch("http://localhost:3000/admin/api/charts_total_ordering_sales_by_month", {
+  fetch("/admin/api/charts_total_ordering_sales_by_month", {
       method: "GET",
       headers: {
           "Accepts": "application/json",
