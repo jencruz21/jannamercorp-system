@@ -1,5 +1,6 @@
 const axios = require('axios');
 require("dotenv").config();
+const SYSTEM_URL = process.env.SYSTEM_URL;
 
 exports.adminDashRoute = (req,res)=>{
     res.render("admin/index")
