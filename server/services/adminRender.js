@@ -1,11 +1,9 @@
 const axios = require('axios');
 require('dotenv').config()
+const SYSTEM_URL = process.env.SYSTEM_URL
 
 exports.adminDashRoute = (req,res)=>{
     res.render("admin/index")
-}
-exports.adminSales = (req,res)=>{
-    res.render("admin/sales")
 }
 
 exports.adminOrder = (req,res)=>{
@@ -67,3 +65,24 @@ exports.adminTracking = (req,res)=>{
   
 }
 
+exports.adminSales = (req,res)=>{
+    const salesHis = [];
+    const salesGrandTotal = [];
+    const salesDate = [];
+
+    setTimeout(() => {
+        axios.get(`${SYSTEM_URL}/admin/api/salesGrandTotal`)
+    .then(function(response){
+        console.log(response);
+    })
+    .catch(err=>{
+        res.send(err)
+    })
+    }, 500);
+
+    res.render("admin/sales", {
+        data: {
+            grandtotal: salesGrandTotal
+        }
+    })
+}

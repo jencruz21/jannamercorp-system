@@ -178,5 +178,9 @@ route.get('/api/users/:id',con_users.usersFindId)
 route.put('/api/users/:id',con_users.usersUpdate)
 route.delete('/api/users/:id',con_users.usersDelete)
 
+// SALES
+route.get('/api/salesHis',con_orderingDetails.totalSalesByHistory);
+route.get('/api/salesGrandTotal',con_orderingDetails.totalSalesByGrandTotal);
+route.get('/api/salesDate',con_orderingDetails.totalSalesByDate);
 
 module.exports= route
