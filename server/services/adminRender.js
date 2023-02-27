@@ -1,4 +1,5 @@
 const axios = require('axios');
+require('dotenv').config()
 
 exports.adminDashRoute = (req,res)=>{
     res.render("admin/index")
@@ -19,7 +20,7 @@ exports.adminInventory = (req,res)=>{
 
 
 exports.adminCustomer= (req,res)=>{
-    axios.get("http://localhost:3000/admin/api/customers")
+    axios.get(`${SYSTEM_URL}/admin/api/customers`)
     .then(function(response){
         console.log(response.data)
         res.render('admin/adminCustomer', {customers:response.data})
@@ -31,7 +32,7 @@ exports.adminCustomer= (req,res)=>{
 }
 
 exports.adminTrans = (req,res)=>{
-    axios.get("http://localhost:3000/admin/api/trans")
+    axios.get(`${SYSTEM_URL}/admin/api/trans`)
     .then(function(response){
         
     res.render('admin/adminTrans',{trans:response.data})
@@ -43,7 +44,7 @@ exports.adminTrans = (req,res)=>{
 }
 
 exports.adminInv = (req,res)=>{
-    axios.get("http://localhost:3000/admin/api/invHis")
+    axios.get(`${SYSTEM_URL}/admin/api/invHis`)
     .then(function(response){
         console.log(response.data)
         res.render("admin/adminInv",{invHis:response.data})
@@ -55,7 +56,7 @@ exports.adminInv = (req,res)=>{
 
 exports.adminTracking = (req,res)=>{
 
-    axios.get("http://localhost:3000/admin/api/truckRoute")
+    axios.get(`${SYSTEM_URL}/admin/api/truckRoute`)
     .then(function(response){
         res.render('admin/adminTracking',{truck:response.data})
     })
