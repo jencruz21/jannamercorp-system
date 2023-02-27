@@ -278,18 +278,13 @@ exports.totalSalesByHistory = async (req, res) => {
 exports.totalSalesByGrandTotal = async (req, res) => {
   try {
       const result = await OrderingDetailsdb.aggregate([
-        { $addFields: { "itemId": { $toString: "$_id" } } },
-        { $lookUp: {
-                from: "invdbs",
-                localField: "od_invIdRef",
-                foreignField: "itemId",
-                as: "items"
-        } },
-        { 
-          $sort: {
-            od_grandTotal: 1
-          }  
-        }
+        { "$addFields": { "itemId": { "$toString": "$_id" } } },
+        { "$lookup": {
+                "from": "invdbs",
+                "localField": "od_invIdRef",
+                "foreignField": "itemId",
+                "as": "items"
+        } }
       ]);
       return res.status(200).send(result);
   } catch (error) {

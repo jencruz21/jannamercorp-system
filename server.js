@@ -45,4 +45,4 @@ app.use('faces',express.static(path.resolve(__dirname,"images/faces")))
 app.use("/admin",require('./server/routes/admin'));
 app.use("/staff",require('./server/routes/staff'));
 
-app.listen(PORT,()=>{ console.log(`Server is running on ${SYSTEM_URL}${PORT}`)})
+app.listen(PORT,()=>{ console.log(`Server is running on ${SYSTEM_URL}`)})

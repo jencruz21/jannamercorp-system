@@ -65,24 +65,20 @@ exports.adminTracking = (req,res)=>{
   
 }
 
-exports.adminSales = (req,res)=>{
-    const salesHis = [];
-    const salesGrandTotal = [];
-    const salesDate = [];
+exports.adminSales = async (req,res)=>{
+    let salesHis = [];
+    let salesGrandTotal = [];
+    let salesDate = [];
 
-    setTimeout(() => {
-        axios.get(`${SYSTEM_URL}/admin/api/salesGrandTotal`)
-    .then(function(response){
-        console.log(response);
-    })
-    .catch(err=>{
-        res.send(err)
-    })
-    }, 500);
-
-    res.render("admin/sales", {
-        data: {
+    try {
+        const grandTotalResponse = await axios.get(`${SYSTEM_URL}/admin/api/salesGrandTotal`)
+        const saleHisResponse = await axios.get(`${SYSTEM_URL}/admin/api/salesGrandTotal`);
+        console.log(grandTotalResponse.data[0]);
+        salesGrandTotal = grandTotalResponse.data
+        res.render("admin/sales", {
             grandtotal: salesGrandTotal
-        }
-    })
+        })
+    } catch (error) {
+        return res.status(400).send(error.message)
+    }
 }
