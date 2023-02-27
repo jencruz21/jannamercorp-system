@@ -11,6 +11,7 @@ const connectDB = require('./server/database/connection');
 
 const app = express();
 dotenv.config({path : '.env'})
+const SYSTEM_URL = process.env.SYSTEM_URL
 const PORT = process.env.PORT || 8080
 
 
