@@ -68,7 +68,6 @@ route.delete('/api/adminUsers/:id',controller.adminDelete);
 
 
 //Customer Api
-route.get('/api/customers',con_newCustomer.getCustomers)
 route.post('/api/newCustomer',con_newCustomer.createCustomer)
 route.get('/api/getCustomer',con_newCustomer.findCustomer)
 route.get('/api/getCustomer/:id',con_newCustomer.findCustomer)
@@ -179,8 +178,5 @@ route.get('/api/users/:id',con_users.usersFindId)
 route.put('/api/users/:id',con_users.usersUpdate)
 route.delete('/api/users/:id',con_users.usersDelete)
 
-// CHARTS API
-route.get("/api/charts_total_ordering_sales", con_orderingDetails.getTotalSalesBySelectedPricing)
-route.get("/api/charts_total_ordering_sales_by_month", con_orderingDetails.totalSalesByMonth)
 
 module.exports= route
