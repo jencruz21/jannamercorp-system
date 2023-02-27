@@ -178,6 +178,10 @@ route.get('/api/users/:id',con_users.usersFindId)
 route.put('/api/users/:id',con_users.usersUpdate)
 route.delete('/api/users/:id',con_users.usersDelete)
 
+//charts
+route.get("/api/charts_total_ordering_sales", con_orderingDetails.getTotalSalesBySelectedPricing)
+route.get("/api/charts_total_ordering_sales_by_month", con_orderingDetails.totalSalesByMonth)
+
 // SALES
 route.get('/api/salesHis',con_orderingDetails.totalSalesByHistory);
 route.get('/api/salesGrandTotal',con_orderingDetails.totalSalesByGrandTotal);
