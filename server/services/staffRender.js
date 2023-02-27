@@ -134,7 +134,7 @@ exports.staffItemOut = (req,res) =>{
 }
 
 exports.staffSackTransfer = (req,res)=>{
-    axios.get(`${SYSTEM_URL}/admin/api/itemName`)
+    axios.get(`${SYSTEM_URL}/admin/api/inv`)
     .then(function(response){
         console.log(response.data)
         res.render('staff/sackTransfer',{itemName:response.data})
