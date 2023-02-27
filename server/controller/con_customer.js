@@ -91,12 +91,4 @@ exports.createCustomer = (req,res)=>{
         //     })
         // }
 
-exports.getCustomers = async (req, res) => {
-    try {
-        const result = await NewCustomerDB.find();
-        return res.status(200).send(result);
-    } catch (error) {
-        return res.status(400).send(error);
-    }
-}
         
