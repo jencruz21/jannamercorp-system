@@ -12,10 +12,10 @@
         <div class="card-block">
             <div class="row text-uppercase text-center">
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="date" name="iDate" class="form-control form-txt-primary" placeholder="Date">
+                    <input type="date" name="iDate" class="form-control form-txt-warning" style="background-color: rgba(30, 127, 218, 0.836);" placeholder="Date">
                 </div>
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <select id="cars" name="iItem" class="form-control form-txt-primary" placeholder="Customer Name">
+                    <select id="cars" name="iItem" class="form-control form-txt-warning" style="background-color: rgba(30, 127, 218, 0.836);" placeholder="Customer Name">
                         <option value="Select Customer">Select Item</option>
                         <% for(var i = 0; i < itemName.length; i++) { %>
                           
@@ -26,13 +26,13 @@
                       </select>
                 </div>
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="text" name="iType" class="form-control form-txt-primary" placeholder="Type">
+                    <input type="text" name="iType" class="form-control form-txt-warning" style="background-color: rgba(30, 127, 218, 0.836);" placeholder="Type">
                 </div>
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="number" name="iSacks" class="form-control form-txt-primary" onkeyup="sackCalculate(this.value)" placeholder="Sacks" >
+                    <input type="number" name="iSacks" class="form-control form-txt-warning" style="background-color: rgba(30, 127, 218, 0.836);" onkeyup="sackCalculate(this.value)" placeholder="Sacks" >
                 </div>
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="number" disabled name="iKilos" class="form-control form-txt-primary" placeholder="Kilos">
+                    <input type="number" disabled name="iKilos" class="form-control form-txt-warning" style="background-color: rgba(30, 127, 218, 0.836);" placeholder="Kilos">
                 </div>
         
             </div>
@@ -49,52 +49,52 @@
         <div class="card-block">
             <div class="row text-uppercase text-center">
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="iRetail" onkeyup="calculate(this.value)" class="form-control form-txt-primary" placeholder="Retail">
+                    <input type="number" name="iRetail" onkeyup="calculate(this.value)" style="background-color: rgba(53, 128, 10, 0.89);" class="form-control form-txt-warning" placeholder="Retail">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="i5kg"  class="form-control form-txt-primary" placeholder="Less 5">
+                    <input type="number" name="i5kg"  class="form-control form-txt-warning" style="background-color:  rgba(53, 128, 10, 0.89);" placeholder="Less 5">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="i10kg"  class="form-control form-txt-primary" placeholder="Less 10">
+                    <input type="number" name="i10kg"  class="form-control form-txt-warning" style="background-color:  rgba(53, 128, 10, 0.89);" placeholder="Less 10">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="iMarket"  class="form-control form-txt-primary" placeholder= Market>
+                    <input type="number" name="iMarket"  class="form-control form-txt-warning" style="background-color:  rgba(53, 128, 10, 0.89);" placeholder= Market>
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="iTenc"  class="form-control form-txt-primary" placeholder="Ten Cavans">
+                    <input type="number" name="iTenc"  class="form-control form-txt-warning" style="background-color:  rgba(53, 128, 10, 0.89);" placeholder="Ten Cavans">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="iwsMarket" class="form-control form-txt-primary" placeholder="WS Market">
+                    <input type="number" name="iwsMarket" class="form-control form-txt-warning" style="background-color:  rgba(53, 128, 10, 0.89);" placeholder="WS Market">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="iwholeSale" class="form-control form-txt-primary" placeholder="Whole Sale">
+                    <input type="number" name="iwholeSale" class="form-control form-txt-warning" style="background-color:  rgba(53, 128, 10, 0.89);" placeholder="Whole Sale">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="special1" class="form-control form-txt-primary" placeholder="Special 1">
+                    <input type="number" name="special1" class="form-control form-txt-warning" style="background-color:  rgba(53, 128, 10, 0.89);" placeholder="Special 1">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="special2" class="form-control form-txt-primary" placeholder="Special 2">
+                    <input type="number" name="special2" class="form-control form-txt-warning" style="background-color:  rgba(53, 128, 10, 0.89);" placeholder="Special 2">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="iDivert" class="form-control form-txt-primary" onkeyup="divert(this.value)" placeholder="Divert">
+                    <input type="number" name="iDivert" class="form-control form-txt-warning" style="background-color:  rgba(53, 128, 10, 0.89);" onkeyup="divert(this.value)" placeholder="Divert">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="buyingPrice" class="form-control form-txt-primary" onkeyup="buyingPriceCal(this.value)" placeholder="Buying Price">
+                    <input type="number" name="buyingPrice" class="form-control form-txt-warning" style="background-color:  rgba(53, 128, 10, 0.89);" onkeyup="buyingPriceCal(this.value)" placeholder="Buying Price">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="totalKilos" class="form-control form-txt-primary" placeholder="Total Kilos">
+                    <input type="number" name="totalKilos" class="form-control form-txt-warning" style="background-color:  rgba(53, 128, 10, 0.89);" placeholder="Total Kilos">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="totalBuyingPrice" class="form-control form-txt-primary" placeholder="Total Buying Price">
+                    <input type="number" name="totalBuyingPrice" class="form-control form-txt-warning" style="background-color:  rgba(53, 128, 10, 0.89);" placeholder="Total Buying Price">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="overAllPriceRetail" class="form-control form-txt-primary" onkeyup="overAllCal(this.value)" placeholder="Over All Price Retail">
+                    <input type="number" name="overAllPriceRetail" class="form-control form-txt-warning" style="background-color:  rgba(53, 128, 10, 0.89);" onkeyup="overAllCal(this.value)" placeholder="Over All Price Retail">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="gross" class="form-control form-txt-primary" onkeyup="grossCal(this.value)" placeholder="Gross">
+                    <input type="number" name="gross" class="form-control form-txt-warning" style="background-color:  rgba(53, 128, 10, 0.89);" onkeyup="grossCal(this.value)" placeholder="Gross">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="addedSacks" class="form-control form-txt-primary" readonly placeholder="Added Sacks">
+                    <input type="number" name="addedSacks" class="form-control form-txt-warning" style="background-color:  rgba(53, 128, 10, 0.89);" readonly placeholder="Added Sacks">
                 </div>
 
 
@@ -104,7 +104,7 @@
              
             </div>
             <div class="col-md-3 waves-effect waves-light p-b-10">
-                <button type="submit" class="btn btn-primary waves-effect waves-light">Add Items</button>
+                <button type="submit" class="btn btn waves-effect waves-light" style="background-color: rgba(48, 43, 43, 0.452); border-radius: 10px;">Add Items</button>
             </div>
             <!-- end of eow -->
         </form>
@@ -126,10 +126,10 @@
             <div class="row text-uppercase text-center">
             
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="datetime-local" name="dateTime" class="form-control form-txt-primary" placeholder="Date Time">
+                    <input type="datetime-local" name="dateTime" class="form-control form-txt-warning" style="background-color:  rgba(32, 28, 243, 0.651);"  placeholder="Date Time">
                 </div>
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <select id="cars" name="item" class="form-control form-txt-primary" placeholder="#">
+                    <select id="cars" name="item" class="form-control form-txt-warning" style="background-color:  rgba(32, 28, 243, 0.651);"  placeholder="#">
                         <option value="Select Customer">Select Item</option>
                         <% for(var i = 0; i < itemName.length; i++) { %>
                           
@@ -140,24 +140,24 @@
                       </select>
                 </div>
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="text" name="number" class="form-control form-txt-primary" placeholder="Type">
+                    <input type="text" name="number" class="form-control form-txt-warning" style="background-color: rgba(32, 28, 243, 0.651);"  placeholder="Type">
                 </div>
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="text" name="remarks" class="form-control form-txt-primary" placeholder="Remarks">
+                    <input type="text" name="remarks" class="form-control form-txt-warning" style="background-color:  rgba(32, 28, 243, 0.651);"  placeholder="Remarks">
                 </div>
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="text" name="encodedBy" class="form-control form-txt-primary" placeholder="Encoded By">
+                    <input type="text" name="encodedBy" class="form-control form-txt-warning" style="background-color: rgba(32, 28, 243, 0.651);"  placeholder="Encoded By">
                 </div>
                 <div class="col-md-4 waves-effect waves-light p-b-10">
-                    <input type="text" name="number" class="form-control form-txt-primary" placeholder="Sacks">
+                    <input type="text" name="number" class="form-control form-txt-warning"  style="background-color:  rgba(32, 28, 243, 0.651);" placeholder="Sacks">
                 </div>
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="text" name="riceMill" class="form-control form-txt-primary" placeholder="Rice Mill">
+                    <input type="text" name="riceMill" class="form-control form-txt-warning" style="background-color: rgba(32, 28, 243, 0.651);"  placeholder="Rice Mill">
                 </div>
         
             </div>
             <div class="col-md-3 waves-effect waves-light p-b-10">
-                <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+                <button type="submit" class="btn waves-effect waves-light" style="background-color: rgba(48, 43, 43, 0.452); border-radius: 10px;">Submit</button>
             </div>
         </form>
             <!-- end of eow -->
@@ -179,7 +179,7 @@
         <div class="card-block">
             <div class="row text-uppercase text-center">
                 <div class="col-md-12 waves-effect waves-light p-b-10">
-                    <input type="text" name="itemName" class="form-control form-txt-primary" placeholder="Item Name">
+                    <input type="text" name="itemName" class="form-control form-txt-warning" style="background-color: blue;" placeholder="Item Name">
 
                     
                 </div>
@@ -187,7 +187,7 @@
         
             </div>
             <div class="col-md-3 waves-effect waves-light p-b-10">
-                <button type="submit" class="btn btn-primary waves-effect waves-light">Add Item Name</button>
+                <button type="submit" class="btn  waves-effect waves-light" style="background-color: rgba(48, 43, 43, 0.452);">Add Item Name</button>
             </div>
         </form>
             <!-- end of eow -->

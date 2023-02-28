@@ -1,3 +1,121 @@
 <%- include('include/header') %>
 
+        <h4 class="title">Sales History</h4>
+      
+<div class="card">
+    <div class="card-header">
+        <h5>Sales History</h5>
+        <input type="text" class="col-md-4 float-right form-control " style="background-color: rgba(6, 6, 206, 0.808); color: aliceblue; " id="myInput" onkeyup="filterDoc()" placeholder="Search for Items..">
+              
+        <input type="text" class="col-md-4 float-right form-control " style="background-color: rgba(6, 6, 206, 0.808); color: aliceblue; " id="date" onkeyup="byDate()" placeholder="By Date  Year-month-day">
+             
+        <div class="card-header-right">
+            <ul class="list-unstyled card-option">
+                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                <li><i class="fa fa-window-maximize full-card"></i></li>
+                <li><i class="fa fa-minus minimize-card"></i></li>
+                <li><i class="fa fa-refresh reload-card"></i></li>
+                <li><i class="fa fa-trash close-card"></i></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-block table-border-style" style="overflow-y:scroll;height:500px;">
+        <div class="table-responsive">
+            <table class="table table-dark" id="myTable">
+                <thead>
+                    <tr>
+                        <th style="background-color: rgb(71, 4, 197);">#</th>
+                        
+                        <th style="background-color: rgb(71, 4, 197);">Date</th>
+                        <th style="background-color: rgb(71, 4, 197);">Item Name</th>
+                        <th style="background-color: rgb(71, 4, 197);">Price</th>
+                        <th style="background-color: rgb(71, 4, 197);">Sacks</th>
+                        <th style="background-color: rgb(71, 4, 197);">Kilos</th>
+                        <th style="background-color: rgb(71, 4, 197);">Amount</th>
+                       
+                      
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i = 0; i < salesHistory.length; i++) { %>
+                    <tr>
+                        <th scope="row" style="background-color:rgb(71, 4, 197);;"><%= i + 1 %></th>
+
+                        <td style="background-color: rgb(31, 31, 194);color: rgba(253, 217, 192, 0.438);"><%=salesHistory[i].od_date %></td>
+                        <td style="background-color: rgb(82, 82, 230);color: rosybrown;"><%=salesHistory[i].od_itemName %></td>
+                        <td style="background-color: rgb(6, 6, 189);color: rosybrown;"><%=salesHistory[i].od_price %></td>
+                        <td style="background-color: rgba(7, 7, 131, 0.856);color: rosybrown;"><%=salesHistory[i].od_sacks %></td>
+                        <td style="background-color: rgba(97, 47, 235, 0.801);color: rosybrown;"><%=salesHistory[i].od_kilos %></td>
+                        <td style="background-color: rgb(2, 2, 80);color: rgba(7, 236, 129, 0.644);"><%=salesHistory[i].od_amount %></td>
+
+                 
+                     
+                  
+                    </tr>
+                    <% } %>
+                 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+    function filterDoc() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    
+    
+
+    function byDate() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("date");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    
+    
+
+    
+    
+        </script>
+    
+
 <%- include('include/footer') %>

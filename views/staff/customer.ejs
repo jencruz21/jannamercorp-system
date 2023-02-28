@@ -7,14 +7,14 @@
         <hr>
         <form action="/admin/api/newCustomer" method="post" id="add_customer">
             <div class="form-group">
-                <input type="text" name="custName" class="form-control form-txt-primary" placeholder="Customer Name">
+                <input type="text" name="custName" class="form-control form-txt-primary" placeholder="Customer Name" style="background-color: rgba(0, 255, 255, 0.363);">
             </div>
             <div class="form-group row">
                 <div class="col-sm-6">
-                    <input type="Number" name="custPhone" class="form-control form-txt-primary" placeholder="Phone Number">
+                    <input type="Number" name="custPhone" class="form-control form-txt-primary" placeholder="Phone Number" style="background-color: rgba(0, 255, 255, 0.363);">
                 </div>
                 <div class="col-sm-6">
-                    <input type="datetime-local" name="custDate" class="form-control form-txt-primary" placeholder="Date">
+                    <input type="datetime-local" name="custDate" class="form-control form-txt-primary" placeholder="Date" style="background-color: rgba(0, 255, 255, 0.363);">
                 </div>
             </div>
             <div class="form-group row">
@@ -43,10 +43,10 @@
             <hr>
          
             <div class="form-group">
-                <input type="text" name="custLocation" class="form-control form-txt-primary" placeholder="Customer Location">
+                <input type="text" name="custLocation" class="form-control form-txt-primary" placeholder="Customer Location" style="background-color: rgba(0, 255, 255, 0.363);">
             </div>
             <div class="form-group">
-                <input type="text" name="custCreditLimit" class="form-control form-txt-primary" placeholder="Credit Limit">
+                <input type="text" name="custCreditLimit" class="form-control form-txt-primary" placeholder="Credit Limit" style="background-color: rgba(0, 255, 255, 0.363);">
             </div>
                 
                     
@@ -82,32 +82,32 @@
         <div class="card-block">
             <div class="row text-uppercase text-center">
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="date" name="date" class="form-control form-txt-primary" style="background-color: rgb(47, 47, 187);" placeholder="Date">
+                    <input type="date" name="date" class="form-control form-txt-warning" style="background-color:#6495ED;" placeholder="Date">
                 </div>
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="text" name="itemName" class="form-control form-txt-primary" style="background-color: rgb(58, 58, 189);" placeholder="Item Name">
+                    <input type="text" name="itemName" class="form-control form-txt-warning" style="background-color: #6495ED;" placeholder="Item Name">
                 </div>
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="text" name="selectPricing" class="form-control form-txt-primary"  style="background-color: rgb(63, 63, 184);" placeholder="Select Pricing">
+                    <input type="text" name="selectPricing" class="form-control form-txt-warning"  style="background-color: #6495ED;" placeholder="Select Pricing">
                 </div>
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="text" name="price" class="form-control form-txt-primary"  style="background-color: rgb(63, 63, 184);" placeholder="Price">
+                    <input type="text" name="price" class="form-control form-txt-warning"  style="background-color: #6495ED;" placeholder="Price">
                 </div>
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="number" name="kilosType" class="form-control form-txt-primary" style="background-color: yellow;" placeholder="Kilos type/sacks">
+                    <input type="number" name="kilosType" class="form-control form-txt-warning" style="background-color: #6495ED;" placeholder="Kilos type/sacks">
                 </div>
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="number" name="sacks" class="form-control form-txt-primary" onkeyup="kilosCal(this.value)"  style="background-color: yellow;" placeholder="By Sacks" >
+                    <input type="number" name="sacks" class="form-control form-txt-warning" onkeyup="kilosCal(this.value)"  style="background-color: #6495ED;" placeholder="By Sacks" >
                 </div>
                
                 <div class="col-md-6 waves-effect waves-light p-b-10">
-                    <input type="number" name="kilos" class="form-control form-txt-primary" readonly  onkeyup="pricingCal(this.value)"  style="background-color: yellow;" placeholder="Kilos">
+                    <input type="number" name="kilos" class="form-control form-txt-warning" readonly  onkeyup="pricingCal(this.value)"  style="background-color: #6495ED;" placeholder="Kilos">
                 </div>
                 <!-- <div class="col-md-6 waves-effect waves-light p-b-10">
                     <input type="number" name="inputKilos" class="form-control form-txt-primary"style="background-color: blue;" onkeyup="calculate(this.value)"  placeholder="Retype Kilos">
                 </div> -->
                 <div class="col-md-6 waves-effect waves-light p-b-10">
-                    <input type="number" name="amount"readonly class="form-control form-txt-primary"style="background-color: blue;"  placeholder="Amount">
+                    <input type="number" name="amount"readonly class="form-control form-txt-warning"style="background-color: blue;"  placeholder="Amount">
                 </div>
         
             </div>
@@ -126,7 +126,7 @@
                 <div class="col-md-3 waves-effect waves-light p-b-10">
                     <!-- <input type="text" name="customer" class="form-control form-txt-primary" placeholder="Select Customer"> -->
 
-                    <select id="cars" name="customer" class="form-control form-txt-primary" placeholder="Customer Name">
+                    <select id="cars" name="customer" class="form-control form-txt-warning" placeholder="Customer Name" style="background-color: #6495ED;">
                         <option value="Select Customer">Select Customer</option>
                         <% for(var i = 0; i < customer.length; i++) { %>
                           
@@ -138,13 +138,13 @@
 
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="previousRemitance"  class="form-control form-txt-primary" placeholder="Previous Remittance">
+                    <input type="number" name="previousRemitance"  class="form-control form-txt-warning" placeholder="Previous Remittance" style="background-color: #6495ED;">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="previousBalance"  class="form-control form-txt-primary" placeholder="Previous Balance">
+                    <input type="number" name="previousBalance"  class="form-control form-txt-warning" placeholder="Previous Balance" style="background-color: #6495ED;">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <select id="cars" name="isCleared" class="form-control form-txt-primary"placeholder="Check Cleared">
+                    <select id="cars" name="isCleared" class="form-control form-txt-warning"placeholder="Check Cleared" style="background-color: #6495ED;">
                         <option value="is Cleared">Is Cleared?</option>
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
@@ -153,10 +153,10 @@
                       </select>
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="creditLimit"  class="form-control form-txt-primary" placeholder="Credit Limit">
+                    <input type="number" name="creditLimit"  class="form-control form-txt-warning" placeholder="Credit Limit" style="background-color: #6495ED;">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <select id="cars" name="transaction" class="form-control form-txt-primary" name="isCleared" placeholder="Check Cleared">
+                    <select id="cars" name="transaction" class="form-control form-txt-warning" name="isCleared" placeholder="Check Cleared" style="background-color: #6495ED;">
                         <option value="Transaction Type">Transaction Type</option>
                         <option value="Delivery">Delivery</option>
                         <option value="Pick Up">Pick Up</option>
@@ -165,28 +165,28 @@
                       </select>
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="text" name="addOns" class="form-control form-txt-primary" placeholder="Add-Ons">
+                    <input type="text" name="addOns" class="form-control form-txt-warning" placeholder="Add-Ons" style="background-color: #6495ED;">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="less" class="form-control form-txt-primary" placeholder="Less">
+                    <input type="number" name="less" class="form-control form-txt-warning" placeholder="Less" style="background-color: #6495ED;">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="cashRemited" class="form-control form-txt-primary" onkeyup="changeCal(this.value)" placeholder="Cash Remited">
+                    <input type="number" name="cashRemited" class="form-control form-txt-warning" onkeyup="changeCal(this.value)" placeholder="Cash Remited" style="background-color: #6495ED;">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="checkValue" class="form-control form-txt-primary" placeholder="Check Value">
+                    <input type="number" name="checkValue" class="form-control form-txt-warning" placeholder="Check Value" style="background-color: #6495ED;">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="number" name="checkNumber" class="form-control form-txt-primary" placeholder="Check Number">
+                    <input type="number" name="checkNumber" class="form-control form-txt-warning" placeholder="Check Number" style="background-color: #6495ED;">
                 </div>
                 <div class="col-md-3 waves-effect waves-light p-b-10">
-                    <input type="date" name="checkDate" class="form-control form-txt-primary" placeholder="Check Date">
+                    <input type="date" name="checkDate" class="form-control form-txt-warning" placeholder="Check Date" style="background-color: #6495ED;">
                 </div>
                 <div class="col-md-6 waves-effect waves-light p-b-10">
-                    <input type="text" name="noteTransaction" class="form-control form-txt-primary" placeholder="Note About this Transaction">
+                    <input type="text" name="noteTransaction" class="form-control form-txt-warning" placeholder="Note About this Transaction" style="background-color: #6495ED;">
                 </div>
                 <div class="col-md-6 waves-effect waves-light p-b-10">
-                    <input type="text" name="route" class="form-control form-txt-primary" placeholder="Route">
+                    <input type="text" name="route" class="form-control form-txt-warning" placeholder="Route" style="background-color: #6495ED;">
                 </div>
 
              
@@ -214,19 +214,19 @@
         <div class="card-block">
             <div class="row text-uppercase text-center">
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="text" name="itemSubtotal" readonly class="form-control form-txt-primary" placeholder="Item Subtotal">
+                    <input type="text" name="itemSubtotal" readonly class="form-control form-txt-warning" placeholder="Item Subtotal" style="background-color: #6495ED;">
                 </div>
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="text" name="grandTotal" readonly class="form-control form-txt-primary" placeholder="Grand Total">
+                    <input type="text" name="grandTotal" readonly class="form-control form-txt-warning" placeholder="Grand Total" style="background-color: #6495ED;">
                 </div>
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="text" name="cavans" readonly class="form-control form-txt-primary" placeholder="Cabans ">
+                    <input type="text" name="cavans" readonly class="form-control form-txt-warning" placeholder="Cabans " style="background-color: #6495ED;">
                 </div>
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="text" name="change" readonly class="form-control form-txt-primary" placeholder="Change">
+                    <input type="text" name="change" readonly class="form-control form-txt-warning" placeholder="Change" style="background-color: #6495ED;">
                 </div>
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <select id="cars" name="newStatus" class="form-control form-txt-primary" placeholder="Check Cleared">
+                    <select id="cars" name="newStatus" class="form-control form-txt-warning" placeholder="Check Cleared" style="background-color: #6495ED;">
                         <option value="Status">Status</option>
                         <option value="Paid">Paid</option>
                         <option value="Balance">Balance</option>
@@ -235,10 +235,10 @@
                       </select>
                 </div>
                 <div class="col-md-2 waves-effect waves-light p-b-10">
-                    <input type="number" name="rowsLeft"  class="form-control form-txt-primary" placeholder="Rows Left">
+                    <input type="number" name="rowsLeft"  class="form-control form-txt-warning" placeholder="Rows Left" style="background-color: #6495ED;">
                 </div>
                 <div class="col-md-12 waves-effect waves-light p-b-10">
-                    <input type="number" name="newBalance" class="form-control form-txt-primary" style="background-color: black;" placeholder="New Balance/Total Amount Due">
+                    <input type="number" name="newBalance" class="form-control form-txt-warning" style="background-color: black;" placeholder="New Balance/Total Amount Due">
                 </div>
         
             </div>

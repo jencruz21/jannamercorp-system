@@ -3,7 +3,9 @@
 <div class="card">
     <div class="card-header">
         <h5>Backload History</h5>
-        <!-- <span>use class <code>table-dark</code> inside table element</span> -->
+        <input type="text" class="col-md-4 float-right form-control " style="background-color: rgba(6, 6, 206, 0.808); color: aliceblue; " id="dateFilter" onkeyup="dateFilter()" placeholder="Search from Date..">
+           <input type="text" class="col-md-4 float-right form-control " style="background-color: rgba(6, 6, 206, 0.808); color: aliceblue; " id="myInput" onkeyup="filterDoc()" placeholder="Search for Items..">
+                           
         <div class="card-header-right">
             <ul class="list-unstyled card-option">
                 <li><i class="fa fa fa-wrench open-card-option"></i></li>
@@ -16,19 +18,18 @@
     </div>
     <div class="card-block table-border-style" style="overflow-y:scroll;height:500px;">
         <div class="table-responsive">
-            <table class="table table-dark">
+            <table class="table table-dark" id="myTable">
                
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Date Time</th>
-                        <th>Item</th>
-                        <th>Type</th>
-                    
-                        <th>Sacks</th>
-                        <th>Remarks</th>
-                        <th>Encode By</th>
-                        <th>Rice Mill</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">#</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">Date Time</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">Item</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">Type</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">Sacks</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">Remarks</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">Encode By</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">Rice Mill</th>
                      
 
                   
@@ -40,20 +41,20 @@
                     <% for(var i = 0; i <backLoad.length; i++) { %>
                  
                     <tr>
-                        <th><%= i + 1 %></th>
-                        <td><%=backLoad[i].dateTime %></td>
-                        <td><%=backLoad[i].item %></td>
-                        <td><%=backLoad[i].type %></td>
-                        <td><%=backLoad[i].sacks %></td>
-                        <td><%=backLoad[i].remarks %></td>
-                        <td><%=backLoad[i].encodeBy %></td>
-                        <td><%=backLoad[i].riceMill %></td>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen;"><%= i + 1 %></th>
+                        <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen;  "><%=backLoad[i].dateTime %></td>
+                        <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen; "><%=backLoad[i].item %></td>
+                        <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen; "><%=backLoad[i].type %></td>
+                        <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen; "><%=backLoad[i].sacks %></td>
+                        <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen; "><%=backLoad[i].remarks %></td>
+                        <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen; "><%=backLoad[i].encodeBy %></td>
+                        <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen; "><%=backLoad[i].riceMill %></td>
                         
-                       <td>
+                       <!-- <td>
                       
                             <span class="text-gradient"><i class="fas fa-times" style="color: rgb(245, 5, 5);"></i></span>
                         </a>
-                       </td>
+                       </td> -->
 
                     </tr>
                     <% } %>
@@ -66,5 +67,56 @@
     </div>
 </div>
 
+
+<script>
+
+    function filterDoc() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    
+    
+     function dateFilter() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("dateFilter");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    
+    
+    
+        </script>
 
 <%- include('include/footer') %>

@@ -6,7 +6,9 @@
 <div class="card">
     <div class="card-header">
         <h5>Sack Transfer History</h5>
-        <!-- <span>use class <code>table-dark</code> inside table element</span> -->
+        <input type="text" class="col-md-4 float-right form-control " style="background-color: rgba(6, 6, 206, 0.808); color: aliceblue; " id="myInput" onkeyup="filterDoc()" placeholder="Search from Item name..">
+        <input type="text" class="col-md-4 float-right form-control " style="background-color: rgba(6, 6, 206, 0.808); color: aliceblue; " id="dateFilter" onkeyup="dateFilter()" placeholder="Search from Date..">
+          
         <div class="card-header-right">
             <ul class="list-unstyled card-option">
                 <li><i class="fa fa fa-wrench open-card-option"></i></li>
@@ -19,25 +21,25 @@
     </div>
     <div class="card-block table-border-style" style="overflow-y:scroll;height:500px;">
         <div class="table-responsive">
-            <table class="table table-dark">
+            <table class="table table-dark" id="myTable">
                
                 <thead>
                     <tr>
-                        <th style="background-color: darkblue;">#</th>
-                        <th style="background-color: darkblue;">Date Time</th>
-                        <th style="background-color: darkblue;">From Item Name</th>
-                        <th style="background-color: darkblue;">Type</th>
-                        <th style="background-color: darkblue;">Total Sacks</th>
-                        <th style="background-color: darkblue;">Total Kilos</th>
-                        <th style="background-color: darkblue;">Transfer To</th>
-                        <th style="background-color: darkblue;">To Item Name</th>
-                        <th style="background-color: darkblue;">Type</th>
-                        <th style="background-color: darkblue;">Total Sacks</th>
-                        <th style="background-color: darkblue;">Total Kilos</th>
-                        <th style="background-color: darkblue;">Sacks Added</th>
-                        <th style="background-color: darkblue;">Kilos Added</th>
-                        <th style="background-color: darkblue;">New Sacks Added</th>
-                        <th style="background-color: darkblue;">New Kilos Added</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">#</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">Date Time</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">From Item Name</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">Type</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">Total Sacks</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">Total Kilos</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: rgb(172, 73, 43);">Transfer To</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">To Item Name</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">Type</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">Total Sacks</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">Total Kilos</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">Sacks Added</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">Kilos Added</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">New Sacks Added</th>
+                        <th style="background-color: rgba(42, 92, 241, 0.418);color: cornsilk;">New Kilos Added</th>
 
                     </tr>
                    
@@ -47,20 +49,20 @@
                     <tr>
                       
                         <th><%= i + 1 %></th>
-                     <td style="background-color: royalblue;"><%=sacksTransfer[i].dateTime %></td>
-                     <td style="background-color: royalblue;"><%=sacksTransfer[i].itemOne %></td>
-                     <td style="background-color: royalblue;"><%=sacksTransfer[i].typeOne %></td>
-                     <td style="background-color: royalblue;"><%=sacksTransfer[i].sacksOne%></td>
-                     <td style="background-color: royalblue;"><%=sacksTransfer[i].kilosOne%></td>
-                     <td style="background-color: darkgreen;"><%=   ("Transfer To") %></td>
-                     <td style="background-color: royalblue;"><%=sacksTransfer[i].itemTwo %></td>
-                     <td style="background-color: royalblue;"><%=sacksTransfer[i].typeTwo%></td>
-                     <td style="background-color: royalblue;"><%=sacksTransfer[i].sacksTwo%></td>
-                     <td style="background-color: royalblue;"><%=sacksTransfer[i].kilosTwo%></td>
-                     <td style="background-color: royalblue;"><%=sacksTransfer[i].sacksAdded%></td>
-                     <td style="background-color: royalblue;"><%=sacksTransfer[i].kilosAdded%></td>
-                     <td style="background-color: royalblue;"><%=sacksTransfer[i].newSacksAdded%></td>
-                     <td style="background-color: royalblue;"><%=sacksTransfer[i].newKilosAdded%></td>
+                     <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen;"><%=sacksTransfer[i].dateTime %></td>
+                     <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen;"><%=sacksTransfer[i].itemOne %></td>
+                     <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen;"><%=sacksTransfer[i].typeOne %></td>
+                     <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen;"><%=sacksTransfer[i].sacksOne%></td>
+                     <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen;"><%=sacksTransfer[i].kilosOne%></td>
+                     <td style="background-color: rgba(42, 92, 241, 0.418);color: rgb(92, 105, 66);"><%=   ("Transfer To") %></td>
+                     <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen;"><%=sacksTransfer[i].itemTwo %></td>
+                     <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen;"><%=sacksTransfer[i].typeTwo%></td>
+                     <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen;"><%=sacksTransfer[i].sacksTwo%></td>
+                     <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen;"><%=sacksTransfer[i].kilosTwo%></td>
+                     <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen;"><%=sacksTransfer[i].sacksAdded%></td>
+                     <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen;"><%=sacksTransfer[i].kilosAdded%></td>
+                     <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen;"><%=sacksTransfer[i].newSacksAdded%></td>
+                     <td style="background-color: rgba(42, 92, 241, 0.418);color: yellowgreen;"><%=sacksTransfer[i].newKilosAdded%></td>
 
                      
 
@@ -74,5 +76,59 @@
     </div>
 </div>
 
+<script>
+
+    function filterDoc() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    
+    
+    
+    
+   
+    function dateFilter() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("dateFilter");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    
+    
+    
+    
+        </script>
 
 <%- include('include/footer') %>
