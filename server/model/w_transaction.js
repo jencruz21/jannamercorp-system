@@ -84,7 +84,7 @@ const transSchema = new mongoose.Schema({
         },
         t_newR:{
             type: String,
-            require:true
+            require:true 
         },
         t_newB:{
             type: String,
